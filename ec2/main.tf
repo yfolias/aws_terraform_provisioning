@@ -41,7 +41,7 @@ resource "aws_instance" "instance" {
     associate_public_ip_address     = true
     security_groups                 = [aws_security_group.ingress-all-test.id]
     subnet_id                       = aws_subnet.my_subnet.id
-    user_data                       = templatefile("user-data/${terraform.workspace}-script.tftpl", { instance_name = "${terraform.workspace}-${var.instance_name}" , password = "test123" })
+    user_data                       = templatefile("user-data/${terraform.workspace}-script.${var.script_ext}", { instance_name = "${terraform.workspace}-${var.instance_name}" , tmp_user = var.tmp_user , tmp_pwd = var.tmp_pwd})
     
     tags = {
         Name = "${terraform.workspace}-${var.instance_name}"

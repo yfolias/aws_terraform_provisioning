@@ -35,5 +35,21 @@ variable "public_key" {
 }
 
 variable "ssh_key_name" {
-  
+  type = string
+}
+
+variable "remote_port" {
+  type = number
+}
+
+variable "script_ext" {
+  type = string
+}
+
+variable "tmp_user" {
+  type = string
+}
+
+variable "tmp_pwd" {
+  type = string
 }
