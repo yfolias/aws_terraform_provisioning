@@ -7,3 +7,4 @@ instance_type       =   "t2.micro"
 instance_name       =   ""
 ssh_key_name        =   "mykey"
 public_key          =   ""
+remote_port         =   22

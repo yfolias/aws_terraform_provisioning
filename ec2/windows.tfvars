@@ -1,0 +1,10 @@
+region              =   ""
+availability_zone   =   ""
+access_key          =   ""
+secret_key          =   ""
+ami_id              =   "ami-026b57f3c383c2eec"
+instance_type       =   "t2.micro"
+instance_name       =   ""
+ssh_key_name        =   "mykey"
+public_key          =   ""
+remote_port         =   3389

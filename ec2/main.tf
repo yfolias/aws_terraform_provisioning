@@ -35,14 +35,16 @@ resource "aws_key_pair" "my_key" {
 }
 
 resource "aws_instance" "instance" {
-    ami           = var.ami_id
-    instance_type = var.instance_type
-    key_name      = aws_key_pair.my_key.key_name
-    associate_public_ip_address   =   true
-    security_groups = [aws_security_group.ingress-all-test.id]
-    subnet_id = aws_subnet.my_subnet.id
+    ami                             = var.ami_id
+    instance_type                   = var.instance_type
+    key_name                        = aws_key_pair.my_key.key_name
+    associate_public_ip_address     = true
+    security_groups                 = [aws_security_group.ingress-all-test.id]
+    subnet_id                       = aws_subnet.my_subnet.id
+    user_data                       = templatefile("user-data/${terraform.workspace}-script.tftpl", { instance_name = "${terraform.workspace}-${var.instance_name}" , password = "test123" })
+    
     tags = {
-        Name = var.instance_name
+        Name = "${terraform.workspace}-${var.instance_name}"
     }
 }
 

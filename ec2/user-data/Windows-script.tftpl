@@ -1,0 +1,7 @@
+<powershell>
+# Create new user
+New-LocalUser "yannis" -Password $Password
+
+# Add user to admingroup
+Add-LocalGroupMember -Group "Administrators" -Member "yannis"
+</powershell>

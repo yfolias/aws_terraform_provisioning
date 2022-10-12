@@ -7,8 +7,8 @@ resource "aws_security_group" "ingress-all-test" {
             "0.0.0.0/0"
         ]
         
-        from_port = 22
-        to_port = 22
+        from_port = var.remote_port
+        to_port = var.remote_port
         protocol = "tcp"
     }
 
