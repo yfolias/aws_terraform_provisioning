@@ -10,5 +10,5 @@ ssh_key_name        =   "mykey"
 public_key          =   ""
 remote_port         =   3389
 script_ext          =   "cmd"
-tmp_user            =   "user1"
-tmp_pwd             =   "^^T3$t_123_!"
+tmp_user            =   ""
+tmp_pwd             =   ""
