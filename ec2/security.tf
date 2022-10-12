@@ -1,5 +1,5 @@
 resource "aws_security_group" "ingress-all-test" {
-    name = "allow-all-sg"
+    name = "allow-remote-connections"
     vpc_id = aws_vpc.my_vpc.id
 
     ingress {
@@ -7,7 +7,7 @@ resource "aws_security_group" "ingress-all-test" {
             "0.0.0.0/0"
         ]
         
-        from_port = 0
+        from_port = var.remote_port
         to_port = var.remote_port
         protocol = "tcp"
     }
